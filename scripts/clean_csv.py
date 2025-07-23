@@ -34,7 +34,7 @@ def load_and_clean_csv(path):
 
 if __name__ == "__main__":
     print("Running cleaning script")
-    df = load_and_clean_csv("filtered_data.csv")
+    df = load_and_clean_csv("../database/filtered_data.csv")
     print(df.head())
     print("Sample columns:", df.columns.tolist())
 
