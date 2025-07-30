@@ -2,6 +2,7 @@ import requests
 import os
 from dotenv import load_dotenv
 from datetime import datetime
+import csv
 
 load_dotenv()
 
@@ -29,6 +30,18 @@ def fetch_weather():
 
     return weather_info
 
+def save_to_csv(data, filepath="../database/live_weather.csv"):
+    file_exists = os.path.isfile(filepath)
+
+    with open(filepath, mode='a', newline='') as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames=data.keys())
+
+        if not file_exists:
+            writer.writeheader()
+            
+        writer.writerow(data)
+
+
 
 if __name__ == "__main__":
     weather = fetch_weather()
@@ -36,4 +49,5 @@ if __name__ == "__main__":
         print("Weather fetched successfully")
         for x, y in weather.items():
             print(f"{x}: {y}")
+        save_to_csv(weather)
 
