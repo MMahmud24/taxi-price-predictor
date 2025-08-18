@@ -1,4 +1,6 @@
 timestamp,city,temp_f,weather_main,weather_desc,humidity,wind_speed
-2025-07-29T22:16:37.280700,New York,304.36,Clear,clear sky,61,3.132025-08-04T19:16:26.519185,New York,301.78,Clear,clear sky,47,4.63
+2025-07-29T22:16:37.280700,New York,304.36,Clear,clear sky,61,3.13
+2025-08-04T19:16:26.519185,New York,301.78,Clear,clear sky,47,4.63
 2025-08-15T19:50:32.735368,New York,299.27,Clear,clear sky,71,5.81
 2025-08-15T19:51:08.906604,New York,299.27,Clear,clear sky,71,5.81
+2025-08-17T20:35:55.872015,New York,298.25,Mist,mist,85,2.57
