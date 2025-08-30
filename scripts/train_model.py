@@ -36,8 +36,7 @@ def train_model(path="../database/enhanced_data.csv", output="../models/fare_mod
     # os.makedirs(os.path.dirname(output), exist_ok=True)
     # joblib.dump(model, output)
 
-    print(Y_test)
-    print(y_pred)
+
 
 if __name__ == "__main__":
     train_model()
