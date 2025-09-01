@@ -9,20 +9,30 @@ API_KEY = os.getenv("OPENROUTE_API_KEY")
 
 client = openrouteservice.Client(key=API_KEY)
 
-def calculate(pickup, dropoff):
-    coords = [pickup, dropoff]
+def calculate_distance(lat1, lon1, lat2, lon2):
     try:
-        route = client.directions(coords)
-        distance_meters = route['features'][0]['properties']['segments'][0]['distance']
-        return distance_meters / 1000 
-    except Exception as e:
-        print("Error fetching route", e)
-        return None
+        pickup = [lon1, lat1]     
+        dropoff = [lon2, lat2]    
+
+
+        coords = [pickup, dropoff]
+        route = client.directions(coords, profile='driving-car')
+
     
+        distance_meters = route['routes'][0]['summary']['distance']
+        distance_km = distance_meters / 1000
+    except Exception as e:
+        print(f"Error: {e}")
+        return None
+
+
+
+
+    return distance_km
+
 
 if __name__ == "__main__":
-    pickup = (37.7749, -122.4194)
-    dropoff = (37.7749, -122.4194)
-    print(calculate(pickup, dropoff))
+    distance = calculate_distance(40.709661, -73.816302, 40.758896, -73.985130)
+    print(f"Distance: {distance} km")
 
 
