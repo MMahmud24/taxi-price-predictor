@@ -1,4 +1,4 @@
-#NYC Taxi Fare & Demand Prediction (In Progress)
+<h1>NYC Taxi Fare & Demand Prediction (In Progress)</h1>
 
 <p>
 This project is a work-in-progress web application that predicts NYC taxi fares and identifies ride demand hotspots using a combination of data engineering pipelines, machine learning models, and full-stack integration.
