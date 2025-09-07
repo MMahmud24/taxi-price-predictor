@@ -33,8 +33,8 @@ def train_model(path="../database/enhanced_data.csv", output="../models/fare_mod
     print(f"Mean Squared Error: {mse}")
     print(f"R2 Score: {r2}")
 
-    # os.makedirs(os.path.dirname(output), exist_ok=True)
-    # joblib.dump(model, output)
+    os.makedirs(os.path.dirname(output), exist_ok=True)
+    joblib.dump(model, output)
 
 
 
